@@ -35,10 +35,10 @@ logo = """
 \033[1;93m    / /_/ / / / / __/ / __ \/ ___/
 \033[1;94m   / ____/ /_/ / /___/ / / / /__  
 \033[1;95m  /_/    \__, /_____/_/ /_/\___/  
-\033[1;96m        /____/ \033[1;93mBy \033[1;97mAngga Kurniawan                   
+\033[1;96m        /____/ \033[1;93mBy \033[1;97mRudal-XD                   
 """
 
-anggaxd = """
+rudalxd = """
   \033[1;97m[\033[1;92m 01 \033[1;97m] Encrypt Marshal 
   \033[1;97m[\033[1;92m 02 \033[1;97m] Encrypt Base64  
   \033[1;97m[\033[1;92m 03 \033[1;97m] Encrypt Base32  
@@ -52,7 +52,7 @@ anggaxd = """
 """
 os.system("clear")
 print logo
-slowprint (anggaxd)
+slowprint (rudalxd)
 
 mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
