@@ -14,6 +14,8 @@ B = "\033[1;34m"
 C = "\033[1;36m"
 W = "\033[1;37m"
 P = "\033[1;97m"
+
+input as raw_input
 def slowprint(s):
 	try:
 		for c in s + "\n":
