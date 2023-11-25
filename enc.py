@@ -56,7 +56,7 @@ os.system("clear")
 print(logo)
 slowprint (rudalxd)
 
-mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
+mainmenu = rae_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
 if mainmenu == "1" or mainmenu == "01":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
