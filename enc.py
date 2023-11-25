@@ -15,7 +15,7 @@ C = "\033[1;36m"
 W = "\033[1;37m"
 P = "\033[1;97m"
 
-rae_input=input
+raw_input=input
 def slowprint(s):
 	try:
 		for c in s + "\n":
@@ -56,7 +56,7 @@ os.system("clear")
 print(logo)
 slowprint (rudalxd)
 
-mainmenu = rae_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
+mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
 if mainmenu == "1" or mainmenu == "01":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
