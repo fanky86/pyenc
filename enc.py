@@ -51,7 +51,7 @@ rudalxd = """
   \033[1;97m[\033[1;92m 10 \033[1;97m] Encrypt Zlib\033[1;37m,\033[1;33mBase64
 """
 os.system("clear")
-print logo
+print(logo)
 slowprint (rudalxd)
 
 mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
