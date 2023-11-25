@@ -71,7 +71,7 @@ if mainmenu == "1" or mainmenu == "01":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)
 elif mainmenu == "2" or mainmenu == "02":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -86,7 +86,7 @@ elif mainmenu == "2" or mainmenu == "02":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)
 elif mainmenu == "3" or mainmenu == "03":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -101,7 +101,7 @@ elif mainmenu == "3" or mainmenu == "03":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)
 elif mainmenu == "4" or mainmenu == "04":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -116,7 +116,7 @@ elif mainmenu == "4" or mainmenu == "04":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)    
 elif mainmenu == "5" or mainmenu == "05":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -131,7 +131,7 @@ elif mainmenu == "5" or mainmenu == "05":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)        
 elif mainmenu == "6" or mainmenu == "06":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -156,7 +156,7 @@ elif mainmenu == "7" or mainmenu == "07":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)
 elif mainmenu == "8" or mainmenu == "08":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -174,7 +174,7 @@ elif mainmenu == "8" or mainmenu == "08":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)
 elif mainmenu == "9" or mainmenu == "09":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -192,7 +192,7 @@ elif mainmenu == "9" or mainmenu == "09":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)    
 elif mainmenu == "10":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -208,7 +208,7 @@ elif mainmenu == "10":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)    
 elif mainmenu == "11":
     file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
@@ -227,5 +227,5 @@ elif mainmenu == "11":
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print P + "  Output File Name : " + Y, c
+    print (P + "  Output File Name : " + Y, c)
     print (W)    
