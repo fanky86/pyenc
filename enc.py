@@ -14,7 +14,6 @@ B = "\033[1;34m"
 C = "\033[1;36m"
 W = "\033[1;37m"
 P = "\033[1;97m"
-raw_input = input
 def slowprint(s):
     try:
         for c in s + "\n":
@@ -55,17 +54,17 @@ os.system("clear")
 print(logo)
 slowprint (anggaxd)
 
-mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
+viper = input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
-if mainmenu == "1" or mainmenu == "01":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+if viper == "1" or viper == "01":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = compile(fileopen, "dg", "exec")
     m = marshal.dumps(a)
     s = repr(m)
-    b = "#yo ndak tau komk tanya saya\n\nimport marshal\nexec(marshal.loads(" + s + "))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -73,14 +72,21 @@ if mainmenu == "1" or mainmenu == "01":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== ["ya","y","Y"]:
+        df = input('mau pindah di mana : /sdcard/')
+        open("/sdcard/"+df)
+    else :
+        print('thanks')
     print (W)
-elif mainmenu == "2" or mainmenu == "02":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "2" or viper == "02":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = base64.b64encode(fileopen)
-    b = "#yo ndak tau komk tanya saya\n\nimport base64\nexec(base64.b64decode("" + a + ""))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base64\nexec(base64.b64decode("" + a + ""))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -89,28 +95,29 @@ elif mainmenu == "2" or mainmenu == "02":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)
-elif mainmenu == "3" or mainmenu == "03":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "3" or viper == "03":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = base64.b32encode(fileopen)
-    b = "#yo ndak tau komk tanya saya\n\nimport base32\nexec(base64.b32decode("" + a + ""))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base32\nexec(base64.b32decode("" + a + ""))"
     d = open(c, "w")
     d.write(b)
     d.close()
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
+
     print (P + "  Output File Name : " + Y, c)
     print (W)
-elif mainmenu == "4" or mainmenu == "04":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "4" or viper == "04":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = base64.b16encode(fileopen)
-    b = "#yo ndak tau komk tanya saya\n\nimport base16\nexec(base64.b16decode("" + a + ""))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base16\nexec(base64.b16decode("" + a + ""))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -119,13 +126,13 @@ elif mainmenu == "4" or mainmenu == "04":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)    
-elif mainmenu == "5" or mainmenu == "05":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "5" or viper == "05":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = zlib.compress(fileopen)
-    b = "#yo ndak tau komk tanya saya\n\nimport zlib\nexec(zlib.compress("" + a + ""))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport zlib\nexec(zlib.compress("" + a + ""))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -134,23 +141,23 @@ elif mainmenu == "5" or mainmenu == "05":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)        
-elif mainmenu == "6" or mainmenu == "06":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+elif viper == "6" or viper == "06":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     from py_compile import compile
     compile(file)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (W)        
-elif mainmenu == "7" or mainmenu == "07":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "7" or viper == "07":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (P + "  Encrypting...")
     fileopen = open(file).read()
     sa = compile(fileopen, "dg", "exec")
     sb = marshal.dumps(sa)
     sc = zlib.compress(sb)
     sd = base64.b64encode(sc)
-    b = "#yo ndak tau komk tanya saya\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b64decode("" + str(sd) + ""))))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b64decode("" + str(sd) + ""))))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -159,16 +166,16 @@ elif mainmenu == "7" or mainmenu == "07":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)
-elif mainmenu == "8" or mainmenu == "08":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "8" or viper == "08":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (P + "  Encrypting...")
     fileopen = open(file).read()
     sa = compile(fileopen, "dg", "exec")
     sb = marshal.dumps(sa)
     sc = zlib.compress(sb)
     sd = base64.b32encode(sc)
-    b = "#yo ndak tau komk tanya saya\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b32decode("" + str(sd) + ""))))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b32decode("" + str(sd) + ""))))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -177,16 +184,16 @@ elif mainmenu == "8" or mainmenu == "08":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)
-elif mainmenu == "9" or mainmenu == "09":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "9" or viper == "09":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (P + "  Encrypting...")
     fileopen = open(file).read()
     sa = compile(fileopen, "dg", "exec")
     sb = marshal.dumps(sa)
     sc = zlib.compress(sb)
     sd = base64.b16encode(sc)
-    b = "#yo ndak tau komk tanya saya\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b16decode("" + str(sd) + ""))))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b16decode("" + str(sd) + ""))))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -195,14 +202,14 @@ elif mainmenu == "9" or mainmenu == "09":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)    
-elif mainmenu == "10":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "10":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (P + "  Encrypting...")
     fileopen = open(file).read()
     sa = zlib.compress(fileopen)
     sb = base64.b64encode(sa)
-    b = "#yo ndak tau komk tanya saya\n\nimport zlib,base64\nexec(zlib.decompress(base64.b64decode("" + sb + "")))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport zlib,base64\nexec(zlib.decompress(base64.b64decode("" + sb + "")))"
     d = open(c, "w")
     d.write(b)
     d.close()
@@ -211,9 +218,9 @@ elif mainmenu == "10":
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
     print (W)    
-elif mainmenu == "11":
-    file = raw_input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = raw_input(P + "  Output File Name" + C + " > " + Y)
+elif viper == "11":
+    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
+    c = input(P + "  Output File Name" + C + " > " + Y)
     slowprint (G + "  Encrypting ...")
     fileopen = open(file).read()
     a = compile(fileopen, "dg", "exec")
@@ -221,7 +228,7 @@ elif mainmenu == "11":
     s = repr(m)
     from py_compile import compile
     compile(file)
-    b = "#yo ndak tau komk tanya saya\n\nimport marshal\nexec(marshal.loads(" + s + "))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     d = open(c, "w")
     d.write(b)
     d.close()
