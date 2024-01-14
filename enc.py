@@ -75,8 +75,8 @@ if viper == "1" or viper == "01":
     print('apakah mau menganti ke manual Y/T')
     vip = input("Y/T : ")
     if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : /sdcard/')
-        open("cd /sdcard/%s/%s"%(df,c)).write(b)
+        df = input('mau pindah di mana : ')
+        os.system("cp -r %s %s"%(c,df))
     else :
         print('thanks')
     print (W)
