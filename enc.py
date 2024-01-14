@@ -65,9 +65,6 @@ if viper == "1" or viper == "01":
     m = marshal.dumps(a)
     s = repr(m)
     b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
     time.sleep(3)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
@@ -78,9 +75,13 @@ if viper == "1" or viper == "01":
         df = input('mau pindah di mana : ')
         os.system("mv -f %s %s"%(c,df))
         print("succes memindahkan file ")
-    else :
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
         print('thanks')
-    print (W)
+    else:
+        print(" Masukan Yang Bener Bang")
 elif viper == "2" or viper == "02":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -95,7 +96,20 @@ elif viper == "2" or viper == "02":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")
+
 elif viper == "3" or viper == "03":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -111,7 +125,20 @@ elif viper == "3" or viper == "03":
     time.sleep(3)
 
     print (P + "  Output File Name : " + Y, c)
-    print (W)
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")
+
 elif viper == "4" or viper == "04":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -126,7 +153,19 @@ elif viper == "4" or viper == "04":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)    
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang") 
 elif viper == "5" or viper == "05":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -141,14 +180,36 @@ elif viper == "5" or viper == "05":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)        
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")     
 elif viper == "6" or viper == "06":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     from py_compile import compile
     compile(file)
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
-    print (W)        
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(file,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(file, "w").write(compile(file))
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")     
 elif viper == "7" or viper == "07":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -166,7 +227,19 @@ elif viper == "7" or viper == "07":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")
 elif viper == "8" or viper == "08":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -202,7 +275,19 @@ elif viper == "9" or viper == "09":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)    
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang") 
 elif viper == "10":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -218,7 +303,19 @@ elif viper == "10":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)    
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")    
 elif viper == "11":
     file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
     c = input(P + "  Output File Name" + C + " > " + Y)
@@ -237,4 +334,16 @@ elif viper == "11":
     slowprint(G + "  Encryption Completed...")
     time.sleep(3)
     print (P + "  Output File Name : " + Y, c)
-    print (W)    
+    print('apakah mau menganti ke manual Y/T')
+    vip = input("Y/T : ")
+    if vip== "y" or vip== "Y":
+        df = input('mau pindah di mana : ')
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
+    elif vip== "t" or vip== "T":
+        d = open(c, "w")
+        d.write(b)
+        d.close()
+        print('thanks')
+    else:
+        print(" Masukan Yang Bener Bang")  
