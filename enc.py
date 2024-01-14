@@ -74,7 +74,7 @@ if viper == "1" or viper == "01":
     print (P + "  Output File Name : " + Y, c)
     print('apakah mau menganti ke manual Y/T')
     vip = input("Y/T : ")
-    if vip== ["ya","y","Y"]:
+    if vip== "y" or vip== "Y":
         df = input('mau pindah di mana : /sdcard/')
         open("/sdcard/"+df)
     else :
