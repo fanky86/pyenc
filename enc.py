@@ -76,7 +76,7 @@ if viper == "1" or viper == "01":
     vip = input("Y/T : ")
     if vip== "y" or vip== "Y":
         df = input('mau pindah di mana : /sdcard/')
-        open("/sdcard/"+df)
+        open("/sdcard/%s/%s"%(df,c)).write(b)
     else :
         print('thanks')
     print (W)
