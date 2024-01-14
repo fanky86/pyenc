@@ -76,7 +76,8 @@ if viper == "1" or viper == "01":
     vip = input("Y/T : ")
     if vip== "y" or vip== "Y":
         df = input('mau pindah di mana : ')
-        os.system("cp -r %s %s"%(c,df))
+        os.system("mv -f %s %s"%(c,df))
+        print("succes memindahkan file ")
     else :
         print('thanks')
     print (W)
