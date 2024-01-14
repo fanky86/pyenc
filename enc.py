@@ -14,16 +14,15 @@ B = "\033[1;34m"
 C = "\033[1;36m"
 W = "\033[1;37m"
 P = "\033[1;97m"
-
-raw_input=input
+raw_input = input
 def slowprint(s):
-	try:
-		for c in s + "\n":
-        	    sys.stdout.write(c)
-	            sys.stdout.flush()
-	            time.sleep(0.001)
-	except (KeyboardInterrupt,EOFError):
-		run("Nonaktif!!!")
+    try:
+        for c in s + "\n":
+            sys.stdout.write(c)
+            sys.stdout.flush()
+            time.sleep(0.001)
+    except (KeyboardInterrupt,EOFError):
+        print("Nonaktif!!!")
 		
 def slowprintxx(s):
     for c in s + "\n":
@@ -31,16 +30,16 @@ def slowprintxx(s):
         sys.stdout.flush()
         time.sleep(0000000.01)
         
-logo = """
+logo = ("""
 \033[1;91m      ____        ______          
 \033[1;92m     / __ \__  __/ ____/___  _____
 \033[1;93m    / /_/ / / / / __/ / __ \/ ___/
 \033[1;94m   / ____/ /_/ / /___/ / / / /__  
 \033[1;95m  /_/    \__, /_____/_/ /_/\___/  
-\033[1;96m        /____/ \033[1;93mBy \033[1;97mRudal-XD                   
-"""
+\033[1;96m        /____/ \033[1;93mBy \033[1;97mAngga Kurniawan                   
+""")
 
-rudalxd = """
+anggaxd = ("""
   \033[1;97m[\033[1;92m 01 \033[1;97m] Encrypt Marshal 
   \033[1;97m[\033[1;92m 02 \033[1;97m] Encrypt Base64  
   \033[1;97m[\033[1;92m 03 \033[1;97m] Encrypt Base32  
@@ -51,10 +50,10 @@ rudalxd = """
   \033[1;97m[\033[1;92m 08 \033[1;97m] Encrypt Marshal\033[1;37m,\033[1;33mZlib\033[1;37m,\033[1;33mBase32
   \033[1;97m[\033[1;92m 09 \033[1;97m] Encrypt Marshal\033[1;37m,\033[1;33mZlib\033[1;37m,\033[1;33mBase16
   \033[1;97m[\033[1;92m 10 \033[1;97m] Encrypt Zlib\033[1;37m,\033[1;33mBase64
-"""
+""")
 os.system("clear")
 print(logo)
-slowprint (rudalxd)
+slowprint (anggaxd)
 
 mainmenu = raw_input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
