@@ -1,349 +1,169 @@
 import os
-import sys
-import time
-import base64
-import marshal
-import zlib
-import binascii
-import py_compile
+# ------------------[  WARNA  ]-------------------#
+M2 = "[#FF0000]"  # MERAH
+H2 = "[#00FF00]"  # HIJAU
+K2 = "[#FFFF00]"  # KUNING
+B2 = "[#00C8FF]"  # BIRU
+P2 = "[#FFFFFF]"  # PUTIH
+U2 = "[#AF00FF]"  # UNGU
+O2 = "[#FF8F00]"  # ORANGE
 
-R = "\033[1;31m"
-G = "\033[1;32m"
-Y = "\033[1;33m"
-B = "\033[1;34m"
-C = "\033[1;36m"
-W = "\033[1;37m"
-P = "\033[1;97m"
-def slowprint(s):
-    try:
-        for c in s + "\n":
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(0.001)
-    except (KeyboardInterrupt,EOFError):
-        print("Nonaktif!!!")
-		
-def slowprintxx(s):
-    for c in s + "\n":
-        sys.stdout.write(c)
+# ------------------[  MODULE  ]-------------------#
+try:
+    import rich
+except ImportError:
+    os.system("pip install rich")
+from rich.console import Console
+
+console = Console()
+try:
+    import rich
+except ImportError:
+    console.print(f" {H2}• {U2}Sedang Menginstall Modul Rich {H2}•{P2}")
+    os.system("pip install rich")
+try:
+    import stdiomask
+except ImportError:
+    console.print(f" {H2}• {U2}Sedang Menginstall Modul stdiomask {H2}•{P2}")
+    os.system("pip install stdiomask")
+try:
+    import bs4
+except ImportError:
+    console.print(f" {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}")
+    os.system("pip install bs4")
+try:
+    import base64
+except ImportError:
+    console.print(f" {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}")
+    os.system("pip install base64")
+
+import bs4, sys,time,base64,stdiomask,marshal,zlib,binascii,py_compile
+from time import sleep as vip
+from rich.panel import Panel as panel
+from rich.console import Console
+def jalan(keliling):
+    for mau in keliling + "\n":
+        sys.stdout.write(mau)
         sys.stdout.flush()
-        time.sleep(0000000.01)
-        
-logo = ("""
-\033[1;91m      ____        ______          
-\033[1;92m     / __ \__  __/ ____/___  _____
-\033[1;93m    / /_/ / / / / __/ / __ \/ ___/
-\033[1;94m   / ____/ /_/ / /___/ / / / /__  
-\033[1;95m  /_/    \__, /_____/_/ /_/\___/  
-\033[1;96m        /____/ \033[1;93mBy \033[1;97mAngga Kurniawan                   
-""")
+        vip(0.03)
+def clear():
+    os.system("clear")
 
-anggaxd = ("""
-  \033[1;97m[\033[1;92m 01 \033[1;97m] Encrypt Marshal 
-  \033[1;97m[\033[1;92m 02 \033[1;97m] Encrypt Base64  
-  \033[1;97m[\033[1;92m 03 \033[1;97m] Encrypt Base32  
-  \033[1;97m[\033[1;92m 04 \033[1;97m] Encrypt Base16 
-  \033[1;97m[\033[1;92m 05 \033[1;97m] Encrypt Zlib    
-  \033[1;97m[\033[1;92m 06 \033[1;97m] Encrypt Py \033[1;96m> \033[1;97mPyc
-  \033[1;97m[\033[1;92m 07 \033[1;97m] Encrypt Marshal\033[1;37m,\033[1;33mZlib\033[1;37m,\033[1;33mBase64
-  \033[1;97m[\033[1;92m 08 \033[1;97m] Encrypt Marshal\033[1;37m,\033[1;33mZlib\033[1;37m,\033[1;33mBase32
-  \033[1;97m[\033[1;92m 09 \033[1;97m] Encrypt Marshal\033[1;37m,\033[1;33mZlib\033[1;37m,\033[1;33mBase16
-  \033[1;97m[\033[1;92m 10 \033[1;97m] Encrypt Zlib\033[1;37m,\033[1;33mBase64
-""")
-os.system("clear")
-print(logo)
-slowprint (anggaxd)
+pwd=os.getcwd()
+def error():
+    console.print(f"{H2}• {P2}Sedang dalam tahap pengembangan")
+def banner():
+    console.print(panel(f"""{H2}\t_ __  _   _  ___ _ __   ___ 
+\t| '_ \| | | |/ _ \ '_ \ / __|
+\t| |_) | |_| |  __/ | | | (__ 
+\t| .__/ \__, |\___|_| |_|\___|
+\t| |     __/ |                
+\t|_|    |___/   {K2}By: Rudal-XD{P2}
+""",width=60,style="bold cyan"))
+    
+def menu():
+    clear()
+    banner()
+    Console().print(panel(f"""\t{P2}[{H2}01{P2}]. {H2}Encrypt Marshal
+\t{P2}[{H2}02{P2}]. {H2}Encrypt Bash  
+\t{P2}[{H2}03{P2}]. {H2}Encrypt Python into Emoji 
+\t{P2}[{H2}04{P2}]. {H2}Encrypt Python Variable 
+\t{P2}[{H2}05{P2}]. {H2}Encrypt Base64 
+\t{P2}[{H2}06{P2}]. {H2}Encrypt Py {K2}➛  {K2}Pyc
+\t{P2}[{H2}07{P2}]. {H2}Encrypt Zlib, {K2}Base64
+\t{P2}[{H2}08{P2}]. {H2}Encrypt Marshal, {K2}Zlib, {B2}Base64
+\t{P2}[{H2}09{P2}]. {K2}Decrypt Bash""",width=60,style="bold cyan"))
+    vipper = console.input(f"{H2}• {P2}pilih menu : ")
+    if vipper in [""]:
+        console.print(f"{H2}• {P2}[bold red]Masukan Yang Bener Tolol!!! ")
+    elif vipper in ["1", "01"]:
+        encmarshal()
+    elif vipper in ["2", "02"]:
+        encbash()
+    elif vipper in ["3", "03"]:
+        error()
+    elif vipper in ["4", "04"]:
+        error()
+    elif vipper in ["5", "05"]:
+        error()
+    elif vipper in ["6", "06"]:
+        error()
+    elif vipper in ["7", "07"]:
+        error()
+    elif vipper in ["8", "08"]:
+        error()
 
-viper = input(G + "  \033[1;97m[\033[1;93m ?? \033[1;97m] choose/" + R + "> " + G)
 
-if viper == "1" or viper == "01":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
+def encmarshal():
+    try:
+        file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    except KeyError:
+        console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
+    fileout = console.input(f"{H2}• {P2}Output File Name : ")
+    jalan("• Sedang Encrypting ...")
+    try:
+        fileopen = open(file).read()
+    except:
+        console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
     a = compile(fileopen, "dg", "exec")
     m = marshal.dumps(a)
     s = repr(m)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
+    jalan("• Encryption Completed...")
     time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
+    console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s"%(fileout))
+    console.print(f"{H2}• {P2}apakah mau memindahkan file ke manual {K2}Y/T")
+    vip = console.input(f"{H2}• {P2}MASUKAN : ")
     if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
+        df = console.input(f"{H2}• {P2}mau pindah di mana : ")
+        os.system("mv -f %s %s"%(fileout,df))
+        console.print(f"{H2}• {H2}Memindahkan ke {H2}{df} {P2}Succes")
     elif vip== "t" or vip== "T":
-        d = open(c, "w")
+        d = open(fileout, "w")
         d.write(b)
         d.close()
-        print('thanks')
     else:
-        print(" Masukan Yang Bener Bang")
-elif viper == "2" or viper == "02":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
-    a = base64.b64encode(fileopen)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base64\nexec(base64.b64decode("" + a + ""))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")
+        console.print(f"{H2}• {P2}Masukan Yang Bener Bang")
+        exit()
 
-elif viper == "3" or viper == "03":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
-    a = base64.b32encode(fileopen)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base32\nexec(base64.b32decode("" + a + ""))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
+# Encrypt Bash code by npm package "bash-obfuscate"
+def encbash():
+    in_file = input("Input Filename  > ")
+    if not os.path.exists(in_file):
+        print('File not found')
+        os.system("sleep 2")
+        encbash()
+    os.system("bash-obfuscate " + in_file + " -o .temp")
+    if not os.path.exists(".temp"):
+        try:
+            print("Installing Bash-Obfuscate....\n")
+            os.system("apt install nodejs -y && npm install -g bash-obfuscate")
+            os.system("bash-obfuscate " + in_file + " -o .temp")
+        except:
+            print(" Bash-Obfuscate not installed! Install it by:\n{H2}[+] \"apt install nodejs -y && npm install -g bash-obfuscate\"")
+            exit(1)
+    out_file= input("Output Filename  > ")   
+    with open(".temp",'r') as temp_f, open(out_file,'w') as out_f:
+        filedata = temp_f.read()
+        out_f.write("#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n"+filedata)
+    os.remove(".temp")
+    print(f"{H2}{out_file} saved in {pwd}")
+    mover(out_file)
 
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
+# Custom path chooser
+def mover(out_file):
+    move= input("Move to a custom path?(y/n) > ")
+    if move=="y":
+        mpath=input("Enter the path > ")
+        if os.path.exists(mpath):
+            os.system(f'''mv -f "{out_file}" "{mpath}" ''')
+            print(f"{H2}{out_file} moved to {mpath}\n")
+        else:
+            print("Path do not exist!\n")
     else:
-        print(" Masukan Yang Bener Bang")
-
-elif viper == "4" or viper == "04":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
-    a = base64.b16encode(fileopen)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport base16\nexec(base64.b16decode("" + a + ""))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang") 
-elif viper == "5" or viper == "05":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
-    a = zlib.compress(fileopen)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport zlib\nexec(zlib.compress("" + a + ""))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")     
-elif viper == "6" or viper == "06":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    from py_compile import compile
-    compile(file)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(file,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(file, "w").write(compile(file))
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")     
-elif viper == "7" or viper == "07":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (P + "  Encrypting...")
-    fileopen = open(file).read()
-    sa = compile(fileopen, "dg", "exec")
-    sb = marshal.dumps(sa)
-    sc = zlib.compress(sb)
-    sd = base64.b64encode(sc)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b64decode("" + str(sd) + ""))))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")
-elif viper == "8" or viper == "08":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (P + "  Encrypting...")
-    fileopen = open(file).read()
-    sa = compile(fileopen, "dg", "exec")
-    sb = marshal.dumps(sa)
-    sc = zlib.compress(sb)
-    sd = base64.b32encode(sc)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b32decode("" + str(sd) + ""))))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print (W)
-elif viper == "9" or viper == "09":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (P + "  Encrypting...")
-    fileopen = open(file).read()
-    sa = compile(fileopen, "dg", "exec")
-    sb = marshal.dumps(sa)
-    sc = zlib.compress(sb)
-    sd = base64.b16encode(sc)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal,zlib,base64\nexec(marshal.loads(zlib.decompress(base64.b16decode("" + str(sd) + ""))))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang") 
-elif viper == "10":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (P + "  Encrypting...")
-    fileopen = open(file).read()
-    sa = zlib.compress(fileopen)
-    sb = base64.b64encode(sa)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport zlib,base64\nexec(zlib.decompress(base64.b64decode("" + sb + "")))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")    
-elif viper == "11":
-    file = input(P + "  Name of the File to Encrypt" + C + " > " + Y)
-    c = input(P + "  Output File Name" + C + " > " + Y)
-    slowprint (G + "  Encrypting ...")
-    fileopen = open(file).read()
-    a = compile(fileopen, "dg", "exec")
-    m = marshal.dumps(a)
-    s = repr(m)
-    from py_compile import compile
-    compile(file)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
-    d = open(c, "w")
-    d.write(b)
-    d.close()
-    time.sleep(3)
-    slowprint(G + "  Encryption Completed...")
-    time.sleep(3)
-    print (P + "  Output File Name : " + Y, c)
-    print('apakah mau menganti ke manual Y/T')
-    vip = input("Y/T : ")
-    if vip== "y" or vip== "Y":
-        df = input('mau pindah di mana : ')
-        os.system("mv -f %s %s"%(c,df))
-        print("succes memindahkan file ")
-    elif vip== "t" or vip== "T":
-        d = open(c, "w")
-        d.write(b)
-        d.close()
-        print('thanks')
-    else:
-        print(" Masukan Yang Bener Bang")  
+        print("\n")
+    exit()
+    
+if __name__=='__main__':
+    menu()
