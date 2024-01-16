@@ -136,14 +136,15 @@ def encbash():
 
 # Custom path chooser
 def mover(out_file):
-    move= input("Move to a custom path?(y/n) > ")
+    print('\n')
+    move= console.input(f"{H2}• {P2}Move to a custom path? (y/n) ➛ ")
     if move=="y":
-        mpath=input("Enter the path > ")
+        mpath= console.input(f"{H2}• {P2}Enter the path to ➛ ")
         if os.path.exists(mpath):
             os.system(f'''mv -f "{out_file}" "{mpath}" ''')
-            print(f"{out_file} moved to {mpath}\n")
+            console.print(f"{H2}• {P2}{out_file} moved to {mpath} Succes\n")
         else:
-            print("Path do not exist!\n")
+            console.print(f"{H2}• {P2}Path do not exist!\n")
     else:
         print("\n")
     exit()
