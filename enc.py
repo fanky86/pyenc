@@ -81,9 +81,9 @@ def menu():
     elif vipper in ["2", "02"]:
         encbash()
     elif vipper in ["3", "03"]:
-        error()
+        encryptem()
     elif vipper in ["4", "04"]:
-        error()
+        encryptvar()
     elif vipper in ["5", "05"]:
         error()
     elif vipper in ["6", "06"]:
@@ -135,6 +135,52 @@ def encbash():
     os.remove(".temp")
     print(f"{H2}{out_file} saved in {pwd}")
     mover(out_file)
+
+# Encrypting python file into emoji
+def encryptem():
+    in_file= input("Input File  > " )
+    if not os.path.isfile(in_file):
+        print(' File not found')
+        os.system("sleep 2")
+        encryptem()
+    out_file= input( "Output File  > ")
+    with open(in_file) as in_f, open(out_file, "w", encoding="utf-8") as out_f:
+        out_f.write("# Encrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n")
+        out_f.write(encode_string(in_f.read(), alphabet))
+        print(f"{out_file} saved in {pwd}")
+        mover(out_file)
+
+
+# Encrypting python file into base64 variable, easily decryptable
+def encryptvar():
+    var= input("Variable to be used(Must Required)  > ")
+    if (var==""):
+        print(" No variable")
+        os.system("sleep 3")
+        encryptvar()
+    if (var.find(" ")!= -1):
+        print(" Only one word!")
+        os.system("sleep 3")
+        encryptvar()
+    iteration = input("Iteration count for variable  > ")
+    try:
+        iteration = int(iteration)
+    except Exception:
+        iteration = 50
+    VARIABLE_NAME = var * iteration
+    in_file = input("Input file  > ")
+    if not os.path.isfile(in_file):
+        print(' File not found')
+        os.system("sleep 2")
+        encryptvar()
+    out_file = input("Output file  > ")
+    with open(in_file, 'r', encoding='utf-8', errors='ignore') as in_f,open(out_file, 'w') as out_f:
+       file_content = in_f.read()
+       obfuscated_content = obfuscate(VARIABLE_NAME, file_content)
+       out_f.write("# Encrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n"+obfuscated_content)
+    print(f"{out_file} saved in {pwd}")
+    mover(out_file)
+
 
 # Decrypt bash code by "eval"
 def decryptsh():
