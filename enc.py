@@ -95,16 +95,12 @@ def menu():
 
 
 def encmarshal():
-    try:
-        file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
-    except KeyError:
-        console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
     fileout = console.input(f"{H2}• {P2}Output File Name : ")
     jalan("• Sedang Encrypting ...")
-    try:
-        fileopen = open(file).read()
-    except:
-        console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
+    fileopen = open(file).read()
+    console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
     a = compile(fileopen, "dg", "exec")
     m = marshal.dumps(a)
     s = repr(m)
@@ -113,19 +109,7 @@ def encmarshal():
     jalan("• Encryption Completed...")
     time.sleep(3)
     console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s"%(fileout))
-    console.print(f"{H2}• {P2}apakah mau memindahkan file ke manual {K2}Y/T")
-    vip = console.input(f"{H2}• {P2}MASUKAN : ")
-    if vip== "y" or vip== "Y":
-        df = console.input(f"{H2}• {P2}mau pindah di mana : ")
-        os.system("mv -f %s %s"%(fileout,df))
-        console.print(f"{H2}• {H2}Memindahkan ke {H2}{df} {P2}Succes")
-    elif vip== "t" or vip== "T":
-        d = open(fileout, "w")
-        d.write(b)
-        d.close()
-    else:
-        console.print(f"{H2}• {P2}Masukan Yang Bener Bang")
-        exit()
+    mover(fileout)
 
 # Encrypt Bash code by npm package "bash-obfuscate"
 def encbash():
