@@ -96,17 +96,16 @@ def menu():
 
 def encmarshal():
     file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
-    console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
     fileout = console.input(f"{H2}• {P2}Output File Name : ")
     jalan("• Sedang Encrypting ...")
     fileopen = open(file).read()
-    console.print(f"{H2}• {P2}maaf file yang anda masukan tidak ada!!!")
     a = compile(fileopen, "dg", "exec")
     m = marshal.dumps(a)
     s = repr(m)
     b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     time.sleep(3)
     jalan("• Encryption Completed...")
+    open("{fileout}","w").write(b)
     time.sleep(3)
     console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s"%(fileout))
     mover(fileout)
@@ -142,7 +141,7 @@ def mover(out_file):
         mpath=input("Enter the path > ")
         if os.path.exists(mpath):
             os.system(f'''mv -f "{out_file}" "{mpath}" ''')
-            print(f"{H2}{out_file} moved to {mpath}\n")
+            print(f"{out_file} moved to {mpath}\n")
         else:
             print("Path do not exist!\n")
     else:
