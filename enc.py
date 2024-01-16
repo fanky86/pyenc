@@ -41,6 +41,8 @@ import bs4, sys,time,base64,stdiomask,marshal,zlib,binascii,py_compile
 from time import sleep as vip
 from rich.panel import Panel as panel
 from rich.console import Console
+from pprint import pformat
+
 def jalan(keliling):
     for mau in keliling + "\n":
         sys.stdout.write(mau)
@@ -49,7 +51,12 @@ def jalan(keliling):
 def clear():
     os.system("clear")
 
+
+MAX_STR_LEN = 70
+OFFSET = 10
+
 pwd=os.getcwd()
+
 def error():
     console.print(f"{H2}• {P2}Sedang dalam tahap pengembangan")
 def banner():
@@ -155,7 +162,7 @@ def encode_string(in_s, alphabet):
     return (
         'exec("".join(map(chr,[int("".join(str({}[i]) for i in x.split())) for x in\n'
         '"{}"\n.split("  ")])))\n'.format(
-            format(d2),
+            pformat(d2),
             chunk_string(
                 "  ".join(" ".join(d1[int(i)] for i in str(ord(c))) for c in in_s),
                 MAX_STR_LEN,
