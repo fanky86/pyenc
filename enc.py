@@ -163,6 +163,20 @@ def encode_string(in_s, alphabet):
         )
 )
 
+# Emoji unicode list
+alphabet = [
+    "\U0001f600",
+    "\U0001f603",
+    "\U0001f604",
+    "\U0001f601",
+    "\U0001f605",
+    "\U0001f923",
+    "\U0001f602",
+    "\U0001f609",
+    "\U0001f60A",
+    "\U0001f61b",
+]
+
 # Encrypting python file into base64 variable, easily decryptable
 def encryptvar():
     var= input("Variable to be used(Must Required)  > ")
