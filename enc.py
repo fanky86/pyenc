@@ -149,7 +149,19 @@ def encryptem():
         out_f.write(encode_string(in_f.read(), alphabet))
         print(f"{out_file} saved in {pwd}")
         mover(out_file)
-
+def encode_string(in_s, alphabet):
+    d1 = dict(enumerate(alphabet))
+    d2 = {v: k for k, v in d1.items()}
+    return (
+        'exec("".join(map(chr,[int("".join(str({}[i]) for i in x.split())) for x in\n'
+        '"{}"\n.split("  ")])))\n'.format(
+            pformat(d2),
+            chunk_string(
+                "  ".join(" ".join(d1[int(i)] for i in str(ord(c))) for c in in_s),
+                MAX_STR_LEN,
+            ),
+        )
+)
 
 # Encrypting python file into base64 variable, easily decryptable
 def encryptvar():
