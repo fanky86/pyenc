@@ -92,6 +92,8 @@ def menu():
         error()
     elif vipper in ["8", "08"]:
         error()
+    elif vipper in ["9", "09"]:
+        decryptsh()
 
 
 def encmarshal():
@@ -134,6 +136,30 @@ def encbash():
     print(f"{H2}{out_file} saved in {pwd}")
     mover(out_file)
 
+# Decrypt bash code by "eval"
+def decryptsh():
+    in_file = input("Input File  > ")
+    if not os.path.exists(in_file):
+        print(' File not found')
+        os.system("sleep 2")
+        decryptsh()
+    with open(in_file,'r') as in_f, open(".temp1",'w') as temp_f:
+        filedata = in_f.read()
+        if not (filedata.find("eval") != -1):
+            print(" Cannot be decrypted!")
+            exit()
+        newdata = filedata.replace("eval","echo")
+        temp_f.write(newdata)
+    out_file = input("Output File  > ")
+    os.system("bash .temp1 > .temp2")
+    os.remove(".temp1")
+    with open(".temp2",'r') as temp_f2, open(out_file,'w') as out_f:
+        filedata = temp_f2.read()
+        out_f.write("# Decrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n"+filedata)
+    os.remove(".temp2")
+    print(f"{out_file} saved in {pwd}")
+    mover(out_file)
+    
 # Custom path chooser
 def mover(out_file):
     print('\n')
