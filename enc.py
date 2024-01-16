@@ -155,7 +155,7 @@ def encode_string(in_s, alphabet):
     return (
         'exec("".join(map(chr,[int("".join(str({}[i]) for i in x.split())) for x in\n'
         '"{}"\n.split("  ")])))\n'.format(
-            pformat(d2),
+            format(d2),
             chunk_string(
                 "  ".join(" ".join(d1[int(i)] for i in str(ord(c))) for c in in_s),
                 MAX_STR_LEN,
