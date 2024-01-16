@@ -105,7 +105,7 @@ def encmarshal():
     b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     time.sleep(3)
     jalan("• Encryption Completed...")
-    open("{fileout}","w").write(b)
+    open(fileout,"w").write(b)
     time.sleep(3)
     console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s"%(fileout))
     mover(fileout)
