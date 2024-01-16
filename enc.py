@@ -163,6 +163,12 @@ def encode_string(in_s, alphabet):
         )
 )
 
+def chunk_string(in_s, n):
+    """Chunk string to max length of n"""
+    return "\n".join(
+        "{}\\".format(in_s[i : i + n]) for i in range(0, len(in_s), n)
+    ).rstrip("\\")
+
 # Emoji unicode list
 alphabet = [
     "\U0001f600",
