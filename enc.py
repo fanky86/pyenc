@@ -65,7 +65,7 @@ def banner():
 \t| |_) | |_| |  __/ | | | (__ 
 \t| .__/ \__, |\___|_| |_|\___|
 \t| |     __/ |                
-\t|_|    |___/   {K2}By: Rudal-XD{P2}
+\t|_|    |___/   {K2}By: Viper404-XD{P2}
 """,width=60,style="bold cyan"))
     
 def menu():
@@ -111,7 +111,7 @@ def encmarshal():
     a = compile(fileopen, "dg", "exec")
     m = marshal.dumps(a)
     s = repr(m)
-    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
+    b = "#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Viper404-XD\n\n\nimport marshal\nexec(marshal.loads(" + s + "))"
     time.sleep(3)
     jalan("• Encryption Completed...")
     open(fileout,"w").write(b)
@@ -138,7 +138,7 @@ def encbash():
     out_file= input("Output Filename  > ")   
     with open(".temp",'r') as temp_f, open(out_file,'w') as out_f:
         filedata = temp_f.read()
-        out_f.write("#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Rudal-XD\n\n"+filedata)
+        out_f.write("#ngapain bang ke sini\n#mau recode hahaha\n#usaha bang, btw follow github gw\n#https://github.com/Viper404-XD\n\n"+filedata)
     os.remove(".temp")
     print(f"{H2}{out_file} saved in {pwd}")
     mover(out_file)
@@ -152,7 +152,7 @@ def encryptem():
         encryptem()
     out_file= input( "Output File  > ")
     with open(in_file) as in_f, open(out_file, "w", encoding="utf-8") as out_f:
-        out_f.write("# Encrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n")
+        out_f.write("# Encrypted by Viper404-XD\n# Github- https://github.com/Viper404-XD/Pyenc\n\n")
         out_f.write(encode_string(in_f.read(), alphabet))
         print(f"{out_file} saved in {pwd}")
         mover(out_file)
@@ -216,7 +216,7 @@ def encryptvar():
     with open(in_file, 'r', encoding='utf-8', errors='ignore') as in_f,open(out_file, 'w') as out_f:
        file_content = in_f.read()
        obfuscated_content = obfuscate(VARIABLE_NAME, file_content)
-       out_f.write("# Encrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n"+obfuscated_content)
+       out_f.write("# Encrypted by Viper404-XD\n# Github- https://github.com/Viper404-XD/Pyenc\n\n"+obfuscated_content)
     print(f"{out_file} saved in {pwd}")
     mover(out_file)
 
@@ -256,7 +256,7 @@ def decryptsh():
     os.remove(".temp1")
     with open(".temp2",'r') as temp_f2, open(out_file,'w') as out_f:
         filedata = temp_f2.read()
-        out_f.write("# Decrypted by Rudal-XD\n# Github- https://github.com/Rudal-XD/Pyenc\n\n"+filedata)
+        out_f.write("# Decrypted by Viper404-XD\n# Github- https://github.com/Viper404-XD/Pyenc\n\n"+filedata)
     os.remove(".temp2")
     print(f"{out_file} saved in {pwd}")
     mover(out_file)
