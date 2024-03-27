@@ -92,7 +92,7 @@ def menu():
     elif vipper in ["4", "04"]:
         encryptvar()
     elif vipper in ["5", "05"]:
-        error()
+        sendiri()
     elif vipper in ["6", "06"]:
         error()
     elif vipper in ["7", "07"]:
@@ -102,7 +102,20 @@ def menu():
     elif vipper in ["9", "09"]:
         decryptsh()
 
-
+rr=random.randrange
+rc=random.choice
+def sendiri():
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    fileout = console.input(f"{H2}• {P2}output File Name : ")
+    jalan("• Sedang mencoba Encrypting ...")
+    fileopen = open(file).read()
+    if "a" in str(fileopen):
+        fileoutn = rr(A,Z)
+    if " " in str(fileopen):
+        fileoutn = "-"
+    open(fileout,"w").write(fileoutn)
+    print("sukses")
+    
 def encmarshal():
     file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
     fileout = console.input(f"{H2}• {P2}Output File Name : ")
