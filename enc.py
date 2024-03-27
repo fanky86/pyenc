@@ -111,7 +111,7 @@ def sendiri():
     fileopen = open(file).read()
     if "a" in str(fileopen):
         fileoutn = rr(1,100)
-        s = "import random,os\ntry:"+fileoutn+"\nexcept:print("error")"
+        s = "import random,os\ntry:"+fileoutn+"\nexcept:print("errorr")"
     open(fileout,"w").write(s)
     print("sukses")
     
