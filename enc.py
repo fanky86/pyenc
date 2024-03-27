@@ -110,7 +110,7 @@ def sendiri():
     jalan("• Sedang mencoba Encrypting ...")
     fileopen = open(file).read()
     if "a" in str(fileopen):
-        fileoutn = rr(A,Z)
+        fileoutn = rr(1,100)
     if " " in str(fileopen):
         fileoutn = "-"
     open(fileout,"w").write(fileoutn)
