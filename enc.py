@@ -109,9 +109,9 @@ def sendiri():
     fileout = console.input(f"{H2}• {P2}output File Name : ")
     jalan("• Sedang mencoba Encrypting ...")
     fileopen = open(file).read()
-    if "a" in str(fileopen):
+    if "import" in str(fileopen):
         fileoutn = rr(1,100)
-        s = "import random,os\ntry:"+fileoutn+"\nexcept:print("errorr")"
+        s = "import random,os\n\n"+fileoutn+"\n"
     open(fileout,"w").write(s)
     print("sukses")
     
