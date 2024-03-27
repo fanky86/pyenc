@@ -1,4 +1,4 @@
-import os
+import os,random
 # ------------------[  WARNA  ]-------------------#
 M2 = "[#FF0000]"  # MERAH
 H2 = "[#00FF00]"  # HIJAU
