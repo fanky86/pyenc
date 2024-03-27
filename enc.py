@@ -111,9 +111,8 @@ def sendiri():
     fileopen = open(file).read()
     if "a" in str(fileopen):
         fileoutn = rr(1,100)
-    if " " in str(fileopen):
-        fileoutn = "-"
-    open(fileout,"w").write(fileoutn)
+        s = "import random,os\ntry:"+fileoutn+"\except:print("error")"
+    open(fileout,"w").write(s)
     print("sukses")
     
 def encmarshal():
