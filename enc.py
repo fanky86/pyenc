@@ -92,20 +92,83 @@ def menu():
     elif vipper in ["4", "04"]:
         encryptvar()
     elif vipper in ["5", "05"]:
-        error()
+        encbase64()
     elif vipper in ["6", "06"]:
-        error()
+        encpyc()
     elif vipper in ["7", "07"]:
-        error()
+        enczlib_base64()
     elif vipper in ["8", "08"]:
-        error()
+        encmarshal_zlib_base64()
     elif vipper in ["9", "09"]:
         decryptsh()
 
 rr=random.randrange
 rc=random.choice
 
-    
+
+
+# Base64 encoding
+def encbase64():
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    fileout = console.input(f"{H2}• {P2}Output File Name : ")
+    jalan("• Sedang Encrypting ...")
+    fileopen = open(file).read()
+    b64encoded = base64.b64encode(fileopen.encode()).decode()
+    b = f"# Encrypted by Viper404-XD\n# https://github.com/Viper404-XD\nimport base64\nexec(base64.b64decode('{b64encoded}').decode())"
+    time.sleep(3)
+    jalan("• Encryption Completed...")
+    open(fileout, "w").write(b)
+    time.sleep(3)
+    console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s" % (fileout))
+    mover(fileout)
+
+# Encrypt Python into .pyc (bytecode)
+def encpyc():
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    fileout = console.input(f"{H2}• {P2}Output File Name : ")
+    jalan("• Sedang Encrypting ...")
+    py_compile.compile(file, cfile=fileout)
+    time.sleep(3)
+    jalan("• Encryption Completed...")
+    console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s" % (fileout))
+    mover(fileout)
+
+# Zlib, Base64 encoding
+def enczlib_base64():
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    fileout = console.input(f"{H2}• {P2}Output File Name : ")
+    jalan("• Sedang Encrypting ...")
+    fileopen = open(file).read()
+    zlib_compressed = zlib.compress(fileopen.encode())
+    b64encoded = base64.b64encode(zlib_compressed).decode()
+    b = f"# Encrypted by Viper404-XD\n# https://github.com/Viper404-XD\nimport zlib, base64\nexec(zlib.decompress(base64.b64decode('{b64encoded}')).decode())"
+    time.sleep(3)
+    jalan("• Encryption Completed...")
+    open(fileout, "w").write(b)
+    time.sleep(3)
+    console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s" % (fileout))
+    mover(fileout)
+
+# Marshal, Zlib, Base64 encoding
+def encmarshal_zlib_base64():
+    file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
+    fileout = console.input(f"{H2}• {P2}Output File Name : ")
+    jalan("• Sedang Encrypting ...")
+    fileopen = open(file).read()
+    compiled_code = compile(fileopen, "dg", "exec")
+    marshaled_code = marshal.dumps(compiled_code)
+    zlib_compressed = zlib.compress(marshaled_code)
+    b64encoded = base64.b64encode(zlib_compressed).decode()
+    b = f"# Encrypted by Viper404-XD\n# https://github.com/Viper404-XD\nimport marshal, zlib, base64\nexec(marshal.loads(zlib.decompress(base64.b64decode('{b64encoded}'))))"
+    time.sleep(3)
+    jalan("• Encryption Completed...")
+    open(fileout, "w").write(b)
+    time.sleep(3)
+    console.print(f"{H2}• {P2}Output File Name ➛ {K2} %s" % (fileout))
+    mover(fileout)
+
+
+
 def encmarshal():
     file = console.input(f"{H2}• {P2}nama file untuk di encrypt : ")
     fileout = console.input(f"{H2}• {P2}Output File Name : ")
