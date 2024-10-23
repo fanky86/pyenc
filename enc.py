@@ -79,7 +79,8 @@ def menu():
 \t{P2}[{H2}06{P2}]. {H2}Encrypt Py {K2}➛  {K2}Pyc
 \t{P2}[{H2}07{P2}]. {H2}Encrypt Zlib, {K2}Base64
 \t{P2}[{H2}08{P2}]. {H2}Encrypt Marshal, {K2}Zlib, {B2}Base64
-\t{P2}[{H2}09{P2}]. {K2}Decrypt Bash""",width=60,style="bold cyan"))
+\t{P2}[{H2}09{P2}]. {K2}Decrypt Bash
+\t{P2}[{H2}10{P2}]. {K2}Decrypt Marshal""",width=60,style="bold cyan"))
     vipper = console.input(f"{H2}• {P2}pilih menu : ")
     if vipper in [""]:
         console.print(f"{H2}• {P2}[bold red]Masukan Yang Bener Tolol!!! ")
@@ -101,10 +102,23 @@ def menu():
         encmarshal_zlib_base64()
     elif vipper in ["9", "09"]:
         decryptsh()
+    elif vipper in ["10"]:
+        decmarshal()
 
 rr=random.randrange
 rc=random.choice
 
+
+def decmarshal():
+    file = console.input(f"{H2}• {P2}nama file untuk di decrypt : ")
+    jalan("• Sedang Decrypting ...")
+    try:
+        with open(file, "r") as f:
+            data = f.read()
+            exec(data)
+            jalan("• Decryption Completed...")
+    except Exception as e:
+        console.print(f"{M2}• {P2}Gagal decrypt: {M2}{e}")
 
 
 # Base64 encoding
