@@ -23,7 +23,7 @@
 <p>Setelah menjalankan skrip, Anda akan diminta untuk memasukkan teks yang ingin dienkode atau dienkripsi. Ikuti instruksi yang muncul di layar.</p>
 
 <h2>📝 Contoh Penggunaan</h2>
-<p>Misalnya, Anda ingin mengenkripsi teks "hello":</p>
+<p>install script diperangkat anda, jika suda maka jalankan</p>
 <pre><code>python run.py</code></pre>
 <p>Lalu ikuti instruksi yang ditampilkan.</p>
 
